@@ -148,7 +148,7 @@ git clone YOUR_GITHUB_REPOSITORY_URL
 cd movie_recommendation_system
 ```
 
-Replace `YOUR_GITHUB_REPOSITORY_URL` with your repository's actual URL.
+Replace `https://github.com/goudalija44-cloud/movie-recommendation-system-using-streamlit.git` with your repository's actual URL.
 
 ### 2. Create a virtual environment (recommended)
 
