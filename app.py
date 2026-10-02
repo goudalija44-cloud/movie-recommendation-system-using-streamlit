@@ -6,9 +6,8 @@ import random
 from sklearn.metrics.pairwise import cosine_similarity
 
 
-# -----------------------------
+
 # Page configuration
-# -----------------------------
 st.set_page_config(
     page_title="CineMatch | Movie Discovery",
     page_icon="🎬",
@@ -17,9 +16,8 @@ st.set_page_config(
 )
 
 
-# -----------------------------
+
 # Custom UI styling
-# -----------------------------
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
@@ -197,32 +195,29 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-# -----------------------------
+
 # Load saved components
-# -----------------------------
 @st.cache_resource
 def load_components():
-    movies = joblib.load("C:\\Users\\Administrator\\Desktop\\movie_recommendation_system_using_streamlit\\models\\movies.pkl")
-    tfidf_matrix = joblib.load("C:\\Users\\Administrator\\Desktop\\movie_recommendation_system_using_streamlit\\models\\tfidf_matrix.pkl")
+    movies = joblib.load("models/movies.pkl")
+    tfidf_matrix = joblib.load("models/tfidf_matrix.pkl")
     return movies, tfidf_matrix
 
 
 movies, tfidf_matrix = load_components()
 
 
-# -----------------------------
+
 # Build movie title lookup
-# -----------------------------
 indices = pd.Series(
     movies.index,
     index=movies["title"].str.lower()
 ).drop_duplicates()
 
 
-# -----------------------------
-# Recommendation function
-# Existing recommendation logic
-# -----------------------------
+
+# Recommendation function - Existing recommendation logic
+
 def recommend_movies(movie_name, n=5):
     movie_name = movie_name.strip().lower()
 
@@ -287,9 +282,8 @@ with col3:
 st.write("")
 
 
-# -----------------------------
+
 # Movie selection section
-# -----------------------------
 st.markdown(
     '<div class="section-heading">What do you feel like watching?</div>',
     unsafe_allow_html=True
@@ -349,9 +343,8 @@ else:
     )
 
 
-# -----------------------------
+
 # Recommendation action
-# -----------------------------
 if selected_movie:
     if st.button(
         "✨ Discover Similar Movies",
@@ -362,9 +355,8 @@ if selected_movie:
         st.session_state["show_recommendations"] = True
 
 
-# -----------------------------
+
 # Display recommendation cards
-# -----------------------------
 if st.session_state.get("show_recommendations", False):
     selected = st.session_state.get("last_movie", "")
 
@@ -442,9 +434,7 @@ if st.session_state.get("show_recommendations", False):
         st.warning("No recommendations were found. Try another movie.")
 
 
-# -----------------------------
 # Initial empty state
-# -----------------------------
 else:
     st.markdown("""
     <div class="empty-state">
@@ -458,9 +448,8 @@ else:
     """, unsafe_allow_html=True)
 
 
-# -----------------------------
+
 # Footer
-# -----------------------------
 st.markdown("""
 <div class="footer">
     CINEMATCH · MOVIE DISCOVERY POWERED BY MACHINE LEARNING
