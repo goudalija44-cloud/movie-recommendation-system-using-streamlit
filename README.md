@@ -4,6 +4,12 @@ A content-based movie recommendation system built using Python, Scikit-learn, an
 
 The project uses the TMDB 5000 Movie Dataset and combines text preprocessing, TF-IDF vectorization, and cosine similarity to discover movies related to a user's selected title.
 
+## 🚀 Live Demo
+
+Try the deployed application:
+
+[🎬 Movie Recommendation System](https://goudalija44-cloud-movie-recommendation-system-using--app-pfpr8d.streamlit.app/)
+
 ## 📌 Project Overview
 
 Finding a movie to watch can be difficult when there are thousands of options. This project helps users discover relevant movies by selecting a movie they already like and receiving five similar recommendations.
@@ -144,11 +150,10 @@ movie_recommendation_system_using_streamlit/
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git [View Source Code](https://github.com/goudalija44-cloud/movie-recommendation-system-using-streamlit)
 cd movie_recommendation_system
 ```
 
-Replace `https://github.com/goudalija44-cloud/movie-recommendation-system-using-streamlit.git` with your repository's actual URL.
 
 ### 2. Create a virtual environment (recommended)
 
